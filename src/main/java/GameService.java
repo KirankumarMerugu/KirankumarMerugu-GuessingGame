@@ -21,12 +21,16 @@ public class GameService {
     }
 
     /**
-     * TODO: this method should return true if guessNumber is equal to the secretNumber, and false otherwise.
+     * This method should return true if guessNumber is equal to the secretNumber, and false otherwise.
      *
      * @param guessNumber the number that the user has input into their console.
      * @return true if guessNumber is equal to the secretNumber, false otherwise.
      */
     public boolean checkGuess(double guessNumber) {
-        return false;
+        // Define a small tolerance for floating-point comparison
+        final double TOLERANCE = 0.0001;
+
+        // Check if the absolute difference between guessNumber and secretNumber is smaller than the tolerance
+        return Math.abs(guessNumber - secretNumber) < TOLERANCE;
     }
 }
